@@ -1,7 +1,5 @@
 package com.msp.user;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,9 +11,9 @@ public class UserConller {
 	UserDao dao;
 	
 	@GetMapping("/{id}")
-	public EntityUser findById(@PathVariable Long id)
+	public User findById(@PathVariable Long id)
 	{
-		EntityUser user=this.dao.findOne(id);
+		User user=this.dao.findOne(id);
 		return user;
 	}
 

@@ -2,20 +2,29 @@ package com.msp.user;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class EntityUser {
+public class User {
 
-	public EntityUser() {
+	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	private String username;//longin name
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	@Column
+	private String username;//longin name
+	@Column
 	private int age;
+	@Column
 	private BigDecimal blance;
+	@Column
 	private String name;//name
 
 	public String getUsername() {
